@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+  import './App.css';
+  // import Todo from './components/Todo.js';
+  import AddTodo from './components/AddTodo.js';
+  import { Routes, Route, Navigate } from 'react-router-dom';
+  import NavLink from './components/NavLink.js';
+  import UserDetails from './components/UserDetails.js';
+  import LoginPage from './Login/LoginPage.js';
+  import HomePage from './Home/HomePage.js';
+  import { useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  function App() {
+    const [isLoggedin, setisLoggedin] = useState(false)
 
-export default App;
+    const handleLogin = () => {
+      setisLoggedin(true)
+    }
+
+    const handleLogout=()=>{
+      setisLoggedin(false)
+    }
+    return (
+      <>
+        <div className="App">
+
+
+          <Routes>
+            <Route path='/login' element={<LoginPage onLogin={handleLogin} />}></Route>
+
+            {
+              isLoggedin ? (
+                <>
+                  
+                  <Route path='home' element={<HomePage onLogout={handleLogout}/>}></Route>
+                  <Route path='addtodo' element={<AddTodo />}></Route>
+                  <Route path='navlink' element={<NavLink />}>
+                    <Route path=':id' element={<UserDetails />}></Route>
+                  </Route>
+                </>
+              ) : (
+                <Route path='*' element={<Navigate to={"/login"} />}></Route>
+              )
+            }
+        </Routes>
+
+        </div>
+      </>
+    );
+  }
+
+  export default App;

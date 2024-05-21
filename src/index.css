@@ -5,9 +5,40 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./cool-background\ \(1\).jpeg');
+  color:#ADD8E6;
 }
 
+.goal{
+  background-color: #9ba3ab;
+}
+.complete{
+  background-color: #1B4E4F;
+  color: white
+}
+.delete{
+  background-color: black;
+}
+.view{
+  background-color: #bce7d1de;
+}
+.addDate{
+  background-color: #44C1C5;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    
+}
+.list{
+  list-style: none;
+}
+ul{
+  color:floralwhite;
+}
+.heading{
+  margin-bottom: 50px;
+}
+.todolist{
+  text-decoration-line: none;
 }
