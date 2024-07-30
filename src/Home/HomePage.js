@@ -24,8 +24,9 @@ function HomePage({ onLogout })
         </div>
       </div>
       <nav>
-      <Link className='todolist' to='/addtodo'><h4>Todos-List</h4></Link>
-      <Link to=''></Link>
+        <center>
+          <Link className='todolist' to='/addtodo'><h4>Todos-List</h4></Link>
+        </center>
       </nav>
     </>
   )

@@ -34,36 +34,39 @@ const LoginPage = ({ onLogin }) => { // Receive onLogin prop
     }
   };
 
-  const handleKeyPress=(event)=>{
-    if(event.key==='Enter'){
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
       handleLogin()
     }
   }
 
   return (
-    <div>
-      <center>
-        <h2>Login</h2>
-        <div>
-          <label>Username:  </label>
-          <input className="form-control d-inline-block w-auto mx-3 my-5 mb-1"
-            type="text"
-            value={username}
-            onChange={handleUsernameChange}
-          />
-        </div>
-        <div>
-          <label>Password:  </label>
-          <input className="form-control d-inline-block w-auto mx-3  mt-2"
-            type="password"
-            value={password} onKeyPress={handleKeyPress}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        {error && <p>{error}</p>}
-        <button className="text-center mt-4 mb-5" onClick={handleLogin}>Login</button>
-      </center>
-    </div>
+    <>
+      <div>
+        <center>
+          <h2>Login</h2>
+          <div>
+            <label>Username:  </label>
+            <input className="form-control d-inline-block w-auto mx-3 my-5 mb-1"
+              type="text"
+              value={username}
+              onChange={handleUsernameChange}
+            />
+          </div>
+          <div>
+            <label>Password:  </label>
+            <input className="form-control d-inline-block w-auto mx-3  mt-2"
+              type="password"
+              value={password} onKeyPress={handleKeyPress}
+              onChange={handlePasswordChange}
+            />
+          </div>
+          {error && <p>{error}</p>}
+          <button className="text-center mt-4 mb-5" onClick={handleLogin}>Login</button>
+        </center>
+      </div>
+      <p>Enter username: "user1", password: "pass1 or username: "user2", password: "pass2"</p>
+    </>
   );
 };
 

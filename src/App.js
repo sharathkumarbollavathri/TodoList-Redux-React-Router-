@@ -1,4 +1,4 @@
-  import './App.css';
+  
   // import Todo from './components/Todo.js';
   import AddTodo from './components/AddTodo.js';
   import { Routes, Route, Navigate } from 'react-router-dom';
@@ -20,7 +20,7 @@
     }
     return (
       <>
-        <div className="App">
+        <div >
 
 
           <Routes>
